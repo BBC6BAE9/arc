@@ -1,7 +1,5 @@
 # Arc
-
 ![platform](./platform.png)
-
 Here's an example of a deep link app for Apple platforms, including iOS, tvOS, and watchOS, with macOS currently under development.
 
 With this architecture, you don't need to worry about the organizational structure of navigation components. All you need to do is register a page and develop it, without having to concern yourself with the details of how the navigation is organized.
@@ -65,7 +63,7 @@ Well goes an old saying
 
 <https://developer.apple.com/documentation/swiftui/navigationstack>
 
-```
+```swift
 NavigationStack {
     List(parks) { park in
         NavigationLink(park.name, value: park)
@@ -78,7 +76,7 @@ NavigationStack {
 
 我们创建一个ViewModel，创建一个homeNavStack变量来维护这个导航的深度信息
 
-```
+```swift
 import SwiftUI
 
 // ViewModel for App
@@ -97,7 +95,7 @@ class AppData: ObservableObject {
 
 1、创建一个Tab的枚举
 
-```
+```swift
 import SwiftUI
 
 public enum Tab:String, CaseIterable {
@@ -125,7 +123,7 @@ public enum Tab:String, CaseIterable {
 
 2、在AppData中新增一个变量维护当前选中的tab，默认选中home
 
-```
+```swift
 import SwiftUI
 
 // ViewModel for App
@@ -172,7 +170,7 @@ struct Router {
 
 4、创建页面结构
 
-```
+```swift
 let scheme = "arc"     // protocol
 let host = "hong.com"  // host
 
@@ -283,7 +281,7 @@ struct ContentView: View {
 ![xcode_scheme](./xcode_scheme.jpg)
 
 2、打开任意页面
-```
+```swift
 let url = URL.init(string: "arc://hong.com/aboutpage")!
 UIApplication.shared.open(url)
 ```
