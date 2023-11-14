@@ -1,7 +1,7 @@
-# Arc
+# SwiftUI如何使用DeepLink技术
 ![platform](./platform.png)
 
-# 1、什么是DeepLink
+## 1、什么是DeepLink
 
 就是下面这种短链
 
@@ -39,13 +39,13 @@ Well goes an old saying
 
 
 
-# 2、App是如何导航的
+## 2、App是如何导航的
 
 在屏幕较小的设备我们通常使用tab空间来区分不同的模块，使用导航来进入到该模块更深的层级，在较大屏幕的设备上一般使用侧边栏来区分不同的模块，同样使用导航来进入到该模块更深的层级。
 ![platform](./podcast.jpg)
 
-# 3、实操
-## 3.1 模块内的Navigation导航
+## 3、实操
+### 3.1 模块内的Navigation导航
 
 在导航方面，我们想要的是一个标识符对应一个页面，最终我找到了navigationstack来胜任这个工作。
 
@@ -77,7 +77,7 @@ class AppData: ObservableObject {
 
 如果想回到导航的Root页面话，可以直接设置homeNavStack=[]
 
-##3.2 模块之间的导航
+### 3.2 模块之间的导航
 
 现在以iOS的tab为例
 
@@ -262,7 +262,7 @@ struct ContentView: View {
 }
 ```
 
-# 4、打开任意页面
+## 4、打开任意页面
 
 1、在工程中配置scheme
 
